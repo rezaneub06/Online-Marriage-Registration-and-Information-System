@@ -1,16 +1,18 @@
 <?php
 include 'header.php';
 ?>
-  <!-- ========#content ======== -->
+  <!-- ======== @Region: #content ======== -->
   <div id="content">
     <div class="container">
 		<h3>
          <strong> Registration Address</strong></h3>
 		  <p>
 
-Lama bazar, <br>
-hafiz tower 4th floor, <br>
-sylhet 3200<br>
+Haque Tower, <br>
+JA-28/8-D (8 Floor) Mohakhali Comercial Area, <br>
+Dhaka 1212<br>
+39,Shukrabad,<br>
+Dhanmondi,Dhaka-1207<br>
 
 
 			

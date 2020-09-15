@@ -1,12 +1,12 @@
 <?php
 include 'header.php';
 ?>
-  <!-- ========  #content ======== -->
+  <!-- ======== @Region: #content ======== -->
   <div id="content">
     <div class="container">
 		<h3>
          <strong> INSTRUCTIONS FOR MARRIAGE:</strong></h3>
-		  <p> 
+		  <p"> 
 
 According to Bangladeshi civil law all marriages in Bangladesh require registration with the appropriate Marriage Registrar. Muslim marriages can only be registered by a Muslim Marriage Registrar (Kazi) and the registration of Muslim marriages is mandatory.
 Muslim Marriages: The applicant should contact the Kazi office who registered the marriage to obtain the Muslim Marriage Deed  Nikkah Nama (Bengali and English version). Both the Nikkah Namas (Bengali and English version) must be submitted during the visa interview.<br></p>
