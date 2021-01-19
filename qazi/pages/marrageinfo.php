@@ -1,51 +1,44 @@
+<?php  
+   session_start();
+   $d26=$_SESSION["Qid"] ;
+   
+   
+  if($_SESSION["Qid"]){
 
+  }
+  else{
+    echo '<script> location.replace("../../login.php"); </script>';
+  }
+?>
+<?php
+include 'header.php';
+?>
 
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
-    <title>Kazi Page</title>
-
-    <!-- Bootstrap Core CSS -->
-    <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- MetisMenu CSS -->
-    <link href="../vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
-
-    <!-- Custom CSS -->
-    <link href="../dist/css/sb-admin-2.css" rel="stylesheet">
-
-    <!-- Morris Charts CSS -->
-    <link href="../vendor/morrisjs/morris.css" rel="stylesheet">
-
-    <!-- Custom Fonts -->
-    <link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-
-    
-
-</head>
 
 <body>
 
     <div id="wrapper">
 
         <!-- Navigation -->
-        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
-            <div class="navbar-header">
+        <nav class="navbar navbar-default" role="navigation" style="margin-bottom: 0">
+            <div class="navbar-header" style="float: right;">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                     <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.php">Kazi</a>
+                <a class="navbar-brand" style="color: green;" href="qazi/index.php">Kazi
+                                     <?php
+                                     include "connection.php";
+                                     $qid=$_SESSION["Qid"] ;
+                                     $query=("select * from qazilist where RegID ='$qid'");
+                                     $result=mysqli_query($connection,$query);
+                                     $row = mysqli_fetch_array($result);
+                                     echo $row['name'];
+                                     ?>
+
+                </a>
             </div>
             <!-- /.navbar-header -->
 
@@ -56,7 +49,7 @@
             
             <!-- /.navbar-top-links -->
 
-            <div class="navbar-default sidebar" role="navigation">
+            <div class="sidebar" role="navigation">
                 <div class="sidebar-nav navbar-collapse">
                     <ul class="nav" id="side-menu">
                         </br>
@@ -65,13 +58,13 @@
                         </li>
                        
                         <li>
-                            <a href="marrageRegistration.php"><i class="fa fa-table fa-fw"></i> Marrage Registration </a>
+                            <a href="marrageRegistration.php"><i class="fa fa-table fa-fw"></i> Marriage Registration </a>
                         </li>
                         <li>
                             <a href="Registrationlist.php"><i class="fa fa-table fa-fw"></i> Registration List </a>
                         </li>
                         <li>
-                            <a href=""><i class="fa fa-table fa-fw"></i> Divorce </a>
+                            <a href="divorceinfo.php"><i class="fa fa-table fa-fw"></i> Divorce </a>
                         </li>
                          <li>
                             <a href="logout.php"><i class="fa fa-table fa-fw"></i> LogOut </a>
@@ -101,15 +94,49 @@
        
 
 <table class="table table-hover table-bordered">
+  <?php
+
+include "connection.php";
+
+if(isset($_GET['marrage_id'])){
+  $registration_id = $_GET['marrage_id'];
+  /*$_SESSION["bikeid"]=$product_id;*/
+  /*echo $product_id;*/
+  
+  $get_marrageinfo = "select * from marriagelist where id='$registration_id'";
+  
+  $run_marrageinfo = mysqli_query($connection, $get_marrageinfo);
+  
+    
+  while($row=mysqli_fetch_array($run_marrageinfo)){
+  
+  $registration_id=$row['id'];
+  $registration_sname=$row['GroomName'];
+  $registration_dname=$row['nameB'];
+
+  $registration_date=$row['date'];
+  $registration_RegNo=$row['RegNo'];
+  $registration_ages=$row['ageBgroom'];
+  $registration_aged=$row['ageBi'];
+  $registration_dower=$row['13'];
+ 
+  
+
+  
+  echo "
+
+
+ 
+  
   <tbody>
     <tr>
-      <th>Marrage Registration Number </th>
+      <th>Marriage Registration Number </th>
       <td>$registration_RegNo</td>
      
       
     </tr>
     <tr>
-      <th>Name of the bridegroom </th>
+      <th>Name of the groom </th>
       <td>$registration_sname</td>
      
       
@@ -138,6 +165,15 @@
     
   </tbody>
 
+  ";
+    
+  }
+  }
+  
+
+
+?>
+
 </table>
   
     </div>
@@ -156,22 +192,9 @@
                    
 
     <!-- jQuery -->
-    <script src="../vendor/jquery/jquery.min.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
-
-    <!-- Metis Menu Plugin JavaScript -->
-    <script src="../vendor/metisMenu/metisMenu.min.js"></script>
-
-    <!-- Morris Charts JavaScript -->
-    <script src="../vendor/raphael/raphael.min.js"></script>
-    <script src="../vendor/morrisjs/morris.min.js"></script>
-    <script src="../data/morris-data.js"></script>
-
-    <!-- Custom Theme JavaScript -->
-    <script src="../dist/js/sb-admin-2.js"></script>
-   
+    <?php
+   include 'footer.php';
+   ?>
 
 </body>
 

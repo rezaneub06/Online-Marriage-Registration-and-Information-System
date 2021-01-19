@@ -18,7 +18,7 @@ include 'header.php';
 					</h4>
 			
 			<div class="panel-body">
-              <form accept-charset="UTF-8" role="form" method="POST">
+              <form  role="form" method="POST">
                 <fieldset>
                  
                   
@@ -53,8 +53,6 @@ include 'header.php';
 
                     <input class="btn btn-lg btn-primary btn-block" name="button" type="submit" value="Sign Me Up">
                   </fieldset>
-
-
                   <?php 
 
                   include "connection.php";
@@ -95,10 +93,6 @@ include 'header.php';
                         }
                       }
 
-
-
-
-
                     }
                     else{
 
@@ -106,14 +100,6 @@ include 'header.php';
                      echo "<script>window.alert('you are not authorized user')</script>";
 
                    }
-
-
-
-
-
-
-
-
 
                  }
 
@@ -126,10 +112,24 @@ include 'header.php';
           </div>
 		</div>
         
+		 <div class="col-md-3" style="margin-top:50px; float:right">
+          <h4 class="text-uppercase">
+              Follow Us On:
+            </h4>
+          <!--social media icons-->
+          <div class="social-media social-media-stacked">
+            <!--@todo: replace with company social media details-->
+            <a href="#"><i class="fa fa-twitter fa-fw"></i> Twitter</a>
+            <a href="#"><i class="fa fa-facebook fa-fw"></i> Facebook</a>
+            <a href="#"><i class="fa fa-linkedin fa-fw"></i> LinkedIn</a>
+            <a href="#"><i class="fa fa-google-plus fa-fw"></i> Google+</a>
+          </div>
+        </div>
+		
       <div class="row subfooter">
-        <!--@todo: replace with company copyright details-->
+        
         <div class="col-md-7">
-          <p>Copyright © BD govt</p>
+          <p>Copyright © North East University</p>
           <div class="credits">
             
             Designed by <a href="#">Kutub Uddin & Sayem</a>

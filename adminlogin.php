@@ -7,18 +7,14 @@
 
 <head>
   <meta charset="utf-8">
-  <title>BD Marriage Site</title>
+  <title>online Marriage registration</title>
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <meta content="" name="keywords">
   <meta content="" name="description">
 
   
-  <!-- Fav and touch icons -->
-  <link rel="shortcut icon" href="img/icons/favicon.png">
-  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="img/icons/114x114.png">
-  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="img/icons/72x72.png">
-  <link rel="apple-touch-icon-precomposed" href="img/icons/default.png">
 
+  
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900" rel="stylesheet">
 
@@ -34,23 +30,31 @@
   <!-- Main Stylesheet File -->
   <link href="css/style.css" rel="stylesheet">
 
-  <!--Your custom colour override - predefined colours are: colour-blue.css, colour-green.css, colour-lavander.css, orange is default-->
   <link href="#" id="colour-scheme" rel="stylesheet">
-
+<style>
+  .fullscreen-centered #content {
+  background: transparent;
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  /* bring your own prefixes */
+  transform: translate(-50%, -50%);
+  width: 80%;
+}
+</style>>
 
 
 </head>
 
 
-<body class="fullscreen-centered page-login">
-  <!--Change the background class to alter background image, options are: benches, boots, buildings, city, metro -->
+<body class="fullscreen-centered">
+
   <div id="background-wrapper" class="benches" data-stellar-background-ratio="0.8">
 
-    <!-- ======== @Region: #content ======== -->
-    <div id="content">
+    <!-- ======== : #content ======== -->
+    <div id="content" style="margin-top:0px;">
       <div class="header">
         <div class="header-inner">
-          <!--navbar-branding/logo - hidden image tag & site name so things like Facebook to pick up, actual logo set via CSS for flexibility -->
           <a class="navbar-brand center-block" href="index.html" title="Home">
             
              <h3><strong>Admin Login</strong> </h3>
@@ -98,13 +102,13 @@ if(isset($_POST['button'])){
      
     $_SESSION["admin"] = $user;
     
-    echo '<script> location.replace("admin/pages/"); </script>';
+    echo '<script> location.replace("admin/pages/index.php"); </script>';
 
   }
   else{
-  	echo "<script>window.alert('Password Mismatch Or You Account is not Created')</script>";
+    echo "<script>window.alert('Password Mismatch Or You Account is not Created')</script>";
   
-		}
+    }
 }
 
 

@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title>BD Marriage Site</title>
+  <title>online Marriage registration</title>
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <meta content="" name="keywords">
   <meta content="" name="description">
@@ -24,7 +24,24 @@
 
   <!-- Main Stylesheet File -->
   <link href="css/style.css" rel="stylesheet">
+<style>
+ .card {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  width: 30%;
+}
 
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.container {
+  padding: 2px 16px;
+}
+</style>
+
+
+</style>
   
 </head>
 
@@ -40,13 +57,13 @@
         <div class="header-inner container">
           <div class="row">
             <div class="col-md-8 pb-3">
-              <!--navbar-branding/logo - hidden image tag & site name so things like Facebook to pick up, actual logo set via CSS for flexibility -->
+              
               <a class="navbar-brand" href="index.php" title="Home"> 
-                   <img src="img/bdlogo.png" alt="BD Govt">
+                   <img src="img/bdlogo.png" alt="BD Govt" style="height: 75px;width: 75px;">
                   
               </a>
               <div class="navbar-Brand">
-                  <h4> Online Marriage Registration</h4>
+                  <h3> Online&nbsp; Marriage &nbsp;Registration&nbsp; and&nbsp; Information&nbsp; System</h3>
               </div>
             </div>
             <!--header rightside-->
@@ -67,7 +84,7 @@
           <!--social media icons-->
           
           <!--everything within this div is collapsed on mobile-->
-          <div class="navbar-collapse collapse fixed-top sticky-top"  id="navbard">
+          <div class="navbar-collapse collapse" id="navbard">
             <ul class="nav navbar-nav" id="main-menu">
               <li class="icon-link">
                 <a href="index.php"><i class="fa fa-home"></i></a>
@@ -78,27 +95,25 @@
                 <ul class="dropdown-menu">
                   <li class="dropdown-header">General Info</li>
                   <li><a href="instruction.php" tabindex="-1" class="menu-item">Instruction</a></li>
-				  <li><a href="requirement.php" tabindex="-1" class="menu-item">Marriage Requirement</a></li>
-				 <li><a href="marriagefee.php" tabindex="-1" class="menu-item">Marriage Fee</a></li>
-                  <li><a href="regadd.php" tabindex="-1" class="menu-item">Registration Address</a></li>
-				  <li><a href="about.php" tabindex="-1" class="menu-item">Contract Us</a></li>
+          <li><a href="requirement.php" tabindex="-1" class="menu-item">Marriage Requirement</a></li>
+         <li><a href="marriagefee.php" tabindex="-1" class="menu-item">Marriage Fee</a></li>
+                  
+          <li><a href="about1.php" tabindex="-1" class="menu-item">About Us</a></li>
                   
                   
                 </ul>
               </li>
             <li class="dropdown">
-				<a href="marriagecouple.php">Marriage Couple</a>		
-			</li>
-			<li class="dropdown">
-				<a href="search.php">Search</a>
-
-			</li>	
-      <li><a href="bridegroom.php">Find bridegroom</a>  
+        <a href="marriagecouple.php">Marriage Couple</a>    
       </li>
+        
+      <li><a href="home.php">Find bridegroom</a>  
+      </li>
+       
               <li class="dropdown dropdown-mm">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Login<b class="caret"></b></a>
                 <!-- Dropdown Menu -->
-                <ul class="dropdown-menu dropdown-menu-mm dropdown-menu-persist">
+                <ul class="dropdown-menu dropdown-menu-sm dropdown-menu-persist">
                   <li class="row">
                     <ul class="col-md-6">
                       <li><a href="adminlogin.php" tabindex="-1" class="menu-item">Admin</a></li>
@@ -108,6 +123,12 @@
                   </li>
                 </ul>
               </li>
+               <li class="dropdown">
+        <form class="form-inline md-form" style="margin-top:12px;">
+    <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+      <button class="btn aqua-gradient btn-rounded btn-md dropdown" type="submit">Search</button>
+    </form>
+                </li>
             </ul>
           </div>
           <!--/.navbar-collapse -->

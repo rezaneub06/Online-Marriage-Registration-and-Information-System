@@ -3,16 +3,10 @@
 
 <head>
   <meta charset="utf-8">
-  <title>BD Marriage Site</title>
+  <title>online marriage registration</title>
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <meta content="" name="keywords">
   <meta content="" name="description">
-
-  <!-- Fav and touch icons -->
-  <link rel="shortcut icon" href="img/icons/favicon.png">
-  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="img/icons/114x114.png">
-  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="img/icons/72x72.png">
-  <link rel="apple-touch-icon-precomposed" href="img/icons/default.png">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900" rel="stylesheet">
@@ -29,7 +23,7 @@
   <!-- Main Stylesheet File -->
   <link href="css/style.css" rel="stylesheet">
 
-  <!--Your custom colour override - predefined colours are: colour-blue.css, colour-green.css, colour-lavander.css, orange is default-->
+  <
   <link href="#" id="colour-scheme" rel="stylesheet">
 
   
@@ -37,31 +31,31 @@
 
 <!-- ======== body ======== -->
 
-<body class="fullscreen-centered page-register">
-  <!--Change the background class to alter background image, options are: benches, boots, buildings, city, metro -->
+<body class="fullscreen-centered">
+  
   <div id="background-wrapper" class="benches" data-stellar-background-ratio="0.8">
 
-    <!-- ======== @Region: #content ======== -->
+    <!-- ========  #content ======== -->
     <div id="content">
       <div class="header">
         <div class="header-inner">
-          <!--navbar-branding/logo - hidden image tag & site name so things like Facebook to pick up, actual logo set via CSS for flexibility -->
+          
           <a class="navbar-brand center-block" href="index.html" title="Home">
-            <h4><strong>Qazi Register</strong> </h4>
+            <h4><strong>Kazi Register</strong> </h4>
 
           </a>
         </div>
       </div>
       <div class="row">
-        <div class="col-sm-6 col-sm-offset-3">
+        <div class="col-md-6 col-sm-offset-3">
           <div class="panel panel-default">
             <div class="panel-heading">
               <h3 class="panel-title">
                 Sign Up
               </h3>
             </div>
-            <div class="panel-body">
-              <form accept-charset="UTF-8" role="form" method="POST">
+            <div class="panel-body" >
+              <form  role="form" method="POST">
                 <fieldset>
                   <div class="form-group">
                     <div class="input-group input-group-lg">
@@ -69,6 +63,13 @@
                       <input type="text" name="name" class="form-control" placeholder="Name" required="">
                     </div>
                   </div>
+                    <div class="form-group">
+                     <div class="input-group input-group-lg">
+                     <span class="input-group-addon"><i class="fa fas fa-image"></i></span>
+                    <input type="file" class="form-control" placeholder="Choose Profile" name="img"
+                     id="recipient-name100">  
+             </div>
+           </div>
                   <div class="form-group">
                     <div class="input-group input-group-lg">
                       <span class="input-group-addon"><i class="fa fa-fw fa-envelope"></i></span>
@@ -83,6 +84,19 @@
                   </div>
                   <div class="form-group">
                     <div class="input-group input-group-lg">
+                      <span class="input-group-addon"><i class="fa fa-phone"></i></span>
+                      <input type="text" name="phone" class="form-control" placeholder="phone number" required="">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="input-group input-group-lg">
+                      <span class="input-group-addon"><i class="fa fa-address-card"></i></span>
+                      <input type="text" name="address" class="form-control" placeholder="address" required="">
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <div class="input-group input-group-lg">
                       <span class="input-group-addon"><i class="fa fa-fw fa-lock"></i></span>
                       <input type="password" name="password" class="form-control" placeholder="Password">
                     </div>
@@ -95,24 +109,33 @@
                     </div>
                   </div>
                   <div class="form-group">
+                    <div class="input-group input-group-lg">
+                      <span class="input-group-addon"><i class="fa fa-address-card"></i></span>
+                      <input type="text" name="status" class="form-control" placeholder="status" required="">
+                    </div>
+                  </div>
+                  <div class="form-group">
 
 
 
                     <input class="btn btn-lg btn-primary btn-block" name="button" type="submit" value="Sign Me Up">
                   </fieldset>
-
-
                   <?php 
 
                   include "connection.php";
 
                   if(isset($_POST['button'])){
                     $name=$_POST['name'];
+                    $photo=$_POST['img'];
+
                     $email=$_POST['email'];
                     $RegID=$_POST['RegID'];
                     $password=$_POST['password'];
                     $Re_Password=$_POST['re-password'];
                     $Hashing=hash('sha256', $_POST['password']);
+                    $phn=$_POST['phone'];
+                    $ad=$_POST['address'];
+                    $st=$_POST['status'];
 
 
                     $query=("select * from qazi where RegID='$RegID' and email ='$email' ");
@@ -129,8 +152,8 @@
                       }
                       else{
                         $query="insert into qazilist
-                        (name,RegID,email,password)
-                        values('$name','$RegID','$email','$Hashing');";
+                        (name,RegID,email,password,phone,address,status)
+                        values('$name','$RegID','$email','$Hashing','$phn','$ad','$st');";
                         $result = mysqli_query($connection,$query);
                         if($result){
                           echo "<script>window.alert('Your Account is ready please login')</script>";
@@ -168,13 +191,9 @@
                  ?>
 
 
-
                </form>
                <p class="m-b-0 m-t">Already signed up? <a href="login.php">Login here</a>.</p>
-               <div class="credits">
-
-                Designed by <a href="#">Kutub uddin & sayem</a>
-              </div>
+               
             </div>
           </div>
         </div>

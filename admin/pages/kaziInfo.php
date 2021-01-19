@@ -2,7 +2,18 @@
 <html lang="en">
 
 <head>
+<?php  
+   session_start();
+   $admin=$_SESSION["admin"] ;
+   
+   
+  if($admin=='admin'){
 
+  }
+  else{
+    echo '<script> location.replace("../../adminlogin.php"); </script>';
+  }
+   ?>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -62,13 +73,16 @@
                         </li>
                        
                         <li>
-                            <a href="addQazi.php"><i class="fa fa-table fa-fw"></i> Add Qazi </a>
+                            <a href="addKazi.php"><i class="fa fa-table fa-fw"></i> Add Kazi </a>
                         </li>
                         <li>
-                            <a href="qazitable.php"><i class="fa fa-table fa-fw"></i> Qazi List </a>
+                            <a href="kazitable.php"><i class="fa fa-table fa-fw"></i> Kazi List </a>
                         </li>
                         <li>
                             <a href="review.php"><i class="fa fa-table fa-fw"></i> Review Registration </a>
+                        </li>
+                        <li>
+                            <a href="reviewUser.php"><i class="fa fa-table fa-fw"></i> Review user </a>
                         </li>
                         <li>
                             <a href="divorceList.php"><i class="fa fa-table fa-fw"></i> Divorce List </a>
@@ -97,7 +111,33 @@
             <div class="row">
 <table class="table table-hover table-bordered">
   
+<?php
+
+include "connection.php";
+
+if(isset($_GET['kazi_id'])){
+  $kazi_id = $_GET['kazi_id'];
+  /*$_SESSION["bikeid"]=$product_id;*/
+  /*echo $product_id;*/
   
+  $get_kazi = "select * from qazilist where id='$kazi_id'";
+  
+  $run_kazi = mysqli_query($connection, $get_kazi);
+  
+    
+  while($row=mysqli_fetch_array($run_kazi)){
+  
+  $kazi_id=$row['id'];
+  $kazi_Rid=$row['RegID'];
+  
+  $kazi_name=$row['name'];
+  $kazi_email=$row['email'];
+
+  
+  echo "
+
+
+ 
   
   <tbody>
     <tr>
@@ -118,6 +158,20 @@
     </tr>
     
   </tbody>
+
+  ";
+    
+  }
+  }
+  
+    
+  
+    
+    
+
+
+
+?>
 
 </table>
 

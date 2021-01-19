@@ -16,10 +16,10 @@ include 'header.php';
       <div class="row subfooter">
         <!--@todo: replace with company copyright details-->
         <div class="col-md-7">
-          <p>Copyright © BD govt</p>
+          <p>Copyright © North East University</p>
           <div class="credits">
             
-            Designed by <a href="#">BootstrapMade</a>
+            Designed by <a href="#">Kutub uddin  sayem</a>
           </div>
         </div>
         <div class="col-md-5">

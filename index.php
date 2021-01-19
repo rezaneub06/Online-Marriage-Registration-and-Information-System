@@ -15,10 +15,12 @@ include 'header.php';
                   <h2 class="h1 text-weight-light">
                       Welcome to <span class="text-primary">Marriage Site</span>
                     </h2>
-                  <h4>
-                      the legally or formally recognized union of two people as partners in a personal relationship .
-                    </h4>
-                  <p>Marriage, also called matrimony or wedlock, is a socially or ritually recognised union between spouses that establishes rights and obligations between those spouses, as well as between them and any resulting biological or adopted children and affinity (in-laws and other family through marriage).</p>
+
+
+                  <h3>
+                      <br><br>"That the Messenger of Allah (ﷺ) said: "The best of you is the best to his wives, and I am the best of you to my wives, and when your companion dies, leave him alone."" [Jami' at-Tirmidhi]
+                  </h3>
+                  
                   
                 </div>
                 <div class="col-md-6 col-md-pull-6 hidden-xs">
@@ -31,12 +33,10 @@ include 'header.php';
               <div class="row">
                 <div class="col-md-6 text-right-md item-caption">
                   <h2 class="h1 text-weight-light">
-                      <span class="text-primary">Marriage</span> govt site
+                      <span class="text-primary">Marriage</span> registration site
                     </h2>
-                  <h4>
-                      High quality, responsive theme!
-                    </h4>
-                  <p>Perfect for your App, Web service, company or portfolio!</p>
+                  
+                  <h3><br><br>"That the Messenger of Allah (ﷺ) said: "The best of you is the best to his wives, and I am the best of you to my wives, and when your companion dies, leave him alone."" [Jami' at-Tirmidhi]</h3>
                   
                 </div>
                 <div class="col-md-6 hidden-xs">
@@ -50,14 +50,14 @@ include 'header.php';
     </div>
   </div>
 
-  <!-- ======== @Region: #content ======== -->
+  <!-- ======== : #content ======== -->
   <div id="content">
     <!-- Mission Statement -->
     <div class="mission text-center block block-pd-sm block-bg-noise">
       <div class="container">
         <h2 class="text-shadow-white">
             We are a full digital agency based in BD.
-            <a href="about.php" class="btn btn-more"><i class="fa fa-plus"></i>Read more</a>
+            <a href="about1.php" class="btn btn-more"><i class="fa fa-plus"></i>Read more</a>
           </h2>
       </div>
     </div>
@@ -74,25 +74,46 @@ include 'header.php';
           <blockquote>
             <p>Our productivity sales are up! Customers are happy &amp; we couldn't be happier with this product!</p>
             </blockquote>
-			<img src="img/misc/pm.png" alt="Sheikh Hasina">
+			       <img src="img/misc/pm.png" alt="Sheikh Hasina">
 			
             <small>
                 <strong>Sheikh Hasina</strong>
                 <br>
                 Prime Minister of Bangladesh
               </small>
-          
-        </div>
-        <!--Latest Blog posts-->
+            </small>
+         
        
-      </div>
-    </div>
+        </div>
+        
+        <!--Latest Blog posts-->
+        
+          
+         <div class="card col-md-3 pull-right">
+          <h3 class="text-weight-light" style="font-weight: bold; color: black;">Lower services</h3>
+              <img src="img/5.jpeg" alt="Avatar">
+              <div class="container">
+            <h4><b>Tarina halim</b></h4> 
+            <p>advocate of sylhet</p> 
+              </div>
+          </div>
+       
+        <div class="card col-md-3 pull-right">
+           <img src="img/advocate-2.jpg" alt="Avatar">
+          <div class="container">
+             <h4><b>Tarina halim</b></h4> 
+           <p>advocate of sylhet</p> 
+          </div>
+       </div>
   </div>
+   </div>
+  
   <!-- /content -->
   <!-- Call out block -->
-  
+  </div>
 
-  <!-- ======== @Region: #footer ======== -->
+
+  <!-- ======== : #footer ======== -->
   <?php
 include 'footer.php';
 ?>

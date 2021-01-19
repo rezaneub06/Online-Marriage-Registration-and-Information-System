@@ -1,16 +1,15 @@
-
 <?php
 include 'connection.php';
 ?>
 
-<footer id="footer" class="block block-bg-grey-dark" data-block-bg-img="img/bg_footer-map.png" data-stellar-background-ratio="0.4">
+<footer id="footer" class="block block-bg-grey-dark" data-block-bg-img="img/bg_footer-map.png" data-stellar-background-ratio="0.5">
     <div class="container">
 
       <div class="row" id="contact">
 
         <div class="col-md-3">
           <address>
-              <strong>BD Mariage Govt</strong>
+              <strong>Need TO </strong>
               <br>
               <i class="fa fa-map-pin fa-fw text-primary"></i> lama bazar,sylhet
               <br>
@@ -58,6 +57,8 @@ include 'connection.php';
                 </fieldset>
               </form>
         </div>
+
+
  <?php
 include 'connection.php';
 
@@ -85,7 +86,7 @@ if(isset($_POST['button'])){
 
 
 ?>
-        <div class="col-md-3">
+     <div class="col-md-3">
           <h4 class="text-uppercase">
               Follow Us On:
             </h4>
@@ -104,7 +105,7 @@ if(isset($_POST['button'])){
       <div class="row subfooter">
         <!--@todo: replace with company copyright details-->
         <div class="col-md-7">
-          <p>Copyright © bangladesh govt</p>
+          <p>Copyright ©North East University</p>
           <div class="credits">
             
             Designed by <a href="https://www.facebook.com/km.ibrahim.arif">Kutub uddin & sayem</a>

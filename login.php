@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title>BD Marriage Site</title>
+  <title>online marriage registration</title>
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <meta content="" name="keywords">
   <meta content="" name="description">
@@ -48,7 +48,7 @@
           <!--navbar-branding/logo - hidden image tag & site name so things like Facebook to pick up, actual logo set via CSS for flexibility -->
           <a class="navbar-brand center-block" href="index.html" title="Home">
 
-           <h3><strong>Qazi Login</strong> </h3>
+           <h3><strong>Kazi Login</strong> </h3>
 
 
          </a>
@@ -71,6 +71,7 @@
                     <input type="text" name="RegID" class="form-control" placeholder="Registration ID">
                   </div>
                 </div>
+                
                 <div class="form-group">
                   <div class="input-group input-group-lg">
                     <span class="input-group-addon"><i class="fa fa-fw fa-lock"></i></span>
@@ -81,7 +82,6 @@
                 </div>
                 <input class="btn btn-lg btn-primary btn-block" name="button" type="submit" value="Login">
               </fieldset>
-
 
               <?php 
               session_start();
@@ -95,9 +95,9 @@
                 if($row['RegID']==$RegID && $row['password']==$password && $row['RegID']!=null){
                   $_SESSION["Qid"] = $row['RegID'];
                   $_SESSION["Qemail"] = $row['email'];
-
                   
-                  echo '<script> location.replace("qazi/pages"); </script>';
+                  
+                  echo '<script> location.replace("qazi/pages/index.php"); </script>';
                 }
                 else{
                   echo "<script>window.alert('Password Mismatch Or You Account is not Created')</script>";
@@ -106,19 +106,13 @@
               }
               ?>
 
-
-
-
-
-
-
-
+          
 
             </form>
             <p class="m-b-0 m-t">Not signed up? <a href="register.php">Sign up here</a>.</p>
             <div class="credits">
 
-              Designed by <a href="#">Kutub uddin &Sayem</a>
+               <a href="view/forgotpassword1.php">Forgate Password</a>
             </div>
           </div>
         </div>

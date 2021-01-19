@@ -41,7 +41,7 @@ $(document).ready(function() {
 
   // Background image via data tag
   $('[data-block-bg-img]').each(function() {
-    // @todo - invoke backstretch plugin if multiple images
+    
     var $this = $(this),
       bgImg = $this.data('block-bg-img');
 

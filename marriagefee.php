@@ -3,7 +3,7 @@ include 'header.php';
 ?>
   <!-- ======== @Region: #content ======== -->
   <div id="content">
-    <div class="container">
+    <div class="container block-highlight block-pd-h block-pd-sm">
 		<h3>
          <strong> Mariage Fee</strong></h3>
 		  <p>
@@ -26,5 +26,6 @@ Dower money 5 lac taka, registration fee= 5,100/-<br>
   </div>
  
 
-  <?php
+<?php
 include 'footer.php';
+?>

@@ -1,34 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php session_start();?> 
+   <?php  
+   
+   $admin=$_SESSION["admin"] ;
+   
+   
+   if($_SESSION["admin"]){
 
-<head>
 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
+   }
+   else{
+    echo '<script> location.replace("../../adminlogin.php"); </script>';
+}
+?>
+<?php
 
-    <title>Admin</title>
-
-    <!-- Bootstrap Core CSS -->
-    <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- MetisMenu CSS -->
-    <link href="../vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
-
-    <!-- Custom CSS -->
-    <link href="../dist/css/sb-admin-2.css" rel="stylesheet">
-
-    <!-- Morris Charts CSS -->
-    <link href="../vendor/morrisjs/morris.css" rel="stylesheet">
-
-    <!-- Custom Fonts -->
-    <link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-
-    
-
-</head>
+include 'header.php';
+?>
 
 <body>
 
@@ -54,7 +41,7 @@
             
             <!-- /.navbar-top-links -->
 
-            <div class="navbar-default sidebar" style="background-color: black;height: 600px;" role="navigation">
+            <div class="sidebar" role="navigation">
                 <div class="sidebar-nav navbar-collapse">
                     <ul class="nav" id="side-menu">
                         </br>
@@ -63,13 +50,16 @@
                         </li>
                        
                         <li>
-                            <a href="addQazi.php"><i class="fa fa-table fa-fw"></i> Add Qazi </a>
+                            <a href="addKazi.php"><i class="fa fa-table fa-fw"></i> Add Kazi </a>
                         </li>
                         <li>
-                            <a href="qazitable.php"><i class="fa fa-table fa-fw"></i> Qazi List </a>
+                            <a href="kazitable.php"><i class="fa fa-table fa-fw"></i> Kazi List </a>
                         </li>
                         <li>
                             <a href="review.php"><i class="fa fa-table fa-fw"></i> Review Registration </a>
+                        </li>
+                        <li>
+                            <a href="reviewUser.php"><i class="fa fa-table fa-fw"></i> Review user </a>
                         </li>
                         <li>
                             <a href="divorceList.php"><i class="fa fa-table fa-fw"></i> Divorce List </a>
@@ -101,6 +91,41 @@
   
 
 
+ <?php
+
+include "connection.php";
+
+if(isset($_GET['Registration_id'])){
+  $Registration_id = $_GET['Registration_id'];
+  /*$_SESSION["bikeid"]=$product_id;*/
+  /*echo $product_id;*/
+  
+  $get_info = "select * from marriagelist where id='$Registration_id'";
+  
+  $run_info = mysqli_query($connection, $get_info);
+  
+    
+  while($row=mysqli_fetch_array($run_info)){
+  
+  $registration_id=$row['id'];
+  $registration_names=$row['GroomName'];
+  $registration_named=$row['nameB'];
+  $registration_sfather=$row['f1'];
+  $registration_dfather=$row['f2'];
+$registration_date=$row['date'];
+  $registration_RegNo=$row['RegNo'];
+  $registration_ages=$row['ageBgroom'];
+  $registration_aged=$row['ageBi'];
+  $registration_dower=$row['d13'];
+  $registration_adress=$row['a1'];
+  $registration_adress=$row['a2'];
+
+ 
+  
+  echo "
+
+
+ 
   
   <tbody>
     <tr>
@@ -110,7 +135,7 @@
       
     </tr>
     <tr>
-      <th>Name of the bridegroom </th>
+      <th>Name of the groom </th>
       <td>$registration_names</td>
      
       
@@ -122,12 +147,12 @@
       
     </tr>
     <tr>
-      <th>Marrage Date</th>
+      <th>Marriage Date</th>
       <td> $registration_date</td>
       
     </tr>
     <tr>
-      <th>Age of Bridegroom</th>
+      <th>Age of groom</th>
       
       <td>$registration_ages</td>
     </tr>
@@ -152,6 +177,20 @@
       <td>$registration_adress</td>
     </tr>
   </tbody>
+
+  ";
+    
+  }
+  }
+  
+    
+  
+    
+    
+
+
+
+?>
 
 
 </table>
@@ -190,23 +229,9 @@
 
     <!-- Custom Theme JavaScript -->
     <script src="../dist/js/sb-admin-2.js"></script>
-    <script>
-    $(document).ready(function () {
-  $('#dtBasicExample').DataTable();
-  $('.dataTables_length').addClass('bs-select');
-});
-
-</script>
-<script>
-$(document).ready(function(){
-  $("#myInput").on("keyup", function() {
-    var value = $(this).val().toLowerCase();
-    $("#myTable tr").filter(function() {
-      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-    });
-  });
-});
-</script>
+    <?php
+include 'footer.php';
+?>
 
 </body>
 

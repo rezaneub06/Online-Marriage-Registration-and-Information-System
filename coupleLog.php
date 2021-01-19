@@ -3,17 +3,10 @@
 
 <head>
   <meta charset="utf-8">
-  <title>BD Marriage Site</title>
+  <title>online Marriage registration</title>
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <meta content="" name="keywords">
   <meta content="" name="description">
-
-  <!-- Fav and touch icons -->
-  <link rel="shortcut icon" href="img/icons/favicon.png">
-  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="img/icons/114x114.png">
-  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="img/icons/72x72.png">
-  <link rel="apple-touch-icon-precomposed" href="img/icons/default.png">
-
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900" rel="stylesheet">
 
@@ -29,7 +22,7 @@
   <!-- Main Stylesheet File -->
   <link href="css/style.css" rel="stylesheet">
 
-  <!--Your custom colour override - predefined colours are: colour-blue.css, colour-green.css, colour-lavander.css, orange is default-->
+ >
   <link href="#" id="colour-scheme" rel="stylesheet">
 
 
@@ -38,7 +31,7 @@
 
 
 <body class="fullscreen-centered page-login">
-  <!--Change the background class to alter background image, options are: benches, boots, buildings, city, metro -->
+  
   <div id="background-wrapper" class="benches" data-stellar-background-ratio="0.8">
 
     <!-- ======== #content ======== -->
@@ -81,9 +74,7 @@
                 </div>
                 <input class="btn btn-lg btn-primary btn-block" name="button" type="submit" value="Login">
               </fieldset>
-
-
-              <?php 
+<?php 
               session_start();
               include "connection.php";
               if(isset($_POST['button'])){
@@ -97,7 +88,7 @@
                   $_SESSION["Cemail"] = $row['email'];
 
                   
-                  echo '<script> location.replace("user/pages"); </script>';
+                  echo '<script> location.replace("user/pages/index.php"); </script>';
                 }
                 else{
                   echo "<script>window.alert('Password Mismatch Or You Account is not Created')</script>";
@@ -105,19 +96,6 @@
                 }
               }
               ?>
-
-
-
-
-
-
-
-
-
-
-
-
-
 
             </form>
            
