@@ -9,6 +9,8 @@ Proposedfeatures:
 •Sending interest email to anuser via email.
 •Anadmin panel for controlling and managing the website.
 •Responsive CSS
+
+
 “Online Marriage Registration and Information System” is a web application. Our main goal
 is to make a platform for both marriage registration and finding a bride or groom. The existing
 marriage registration system has so many failings and needs to be updated. We are trying
